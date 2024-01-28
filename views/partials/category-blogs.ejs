@@ -1,0 +1,27 @@
+<%- include("header.ejs") %>
+
+<h2><%= category %> Recipes</h2>
+
+<% filteredPosts.forEach((post, index) => { %>
+    <div class="card mb-4">
+        <div class="card-header"><%= post.name %></div>
+        <div class="row no-gutters">
+            <div class="col-md-6">
+              <% if (post.imageUrl) { %>
+                <img height=500 width=500 src="<%= post.imageUrl %>" alt="<%= post.name %> Image" class="post-image m-5">
+              <% } %>
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title"><%= post.name %></h5>
+                    <p class="card-text"><%= post.description %></p>
+                    <a href="/edit/<%= index %>" class="btn btn-success">Edit</a>
+                    <a href="/delete/<%= index %>" class="btn btn-danger">Delete</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+  <% }); %>
+
+<%- include("footer.ejs") %>

@@ -1,0 +1,160 @@
+<%- include("partials/header.ejs") %>
+
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="images/hero_image.png" width="400" class="d-block mx-lg-auto mx-auto img-fluid" Loading="lazy" alt="Cooking blog image">
+    </div>
+
+    <div class="col-12 col-lg-6">
+
+        <h1 class="display-5 fw-bold mb-3">Savor the Flavor: Where Every Recipe Tells a Delicious Tale!</h1>
+        <p class="lead">
+            Dive into simple and tasty recipes that bring joy to your kitchen. Explore easy cooking tips, and let's make every meal a delicious adventure together. Your next culinary masterpiece begins here!
+        </p>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
+            <a href="/random-recipe" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Show Random</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Categories Start -->
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+    <a href="/category/Indian" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="images/Indian_food.jpg" alt="Indian Food" loading="lazy">
+        </div>
+        <div class="pt-1">Indian</div>
+    </a>
+    
+    <a href="/category/Chinese" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="images/Chinese_food.jpg" alt="Chinese Food" loading="lazy">
+        </div>
+        <div class="pt-1">Chinese</div>
+    </a>
+    <a href="/category/Mexican" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="images/Mexican_food.jpg" alt="Mexican Food" loading="lazy">
+        </div>
+        <div class="pt-1">Mexican</div>
+    </a>
+    <a href="/category/Spanish" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="images/Spanish_food.jpg" alt="Spanish Food" loading="lazy">
+        </div>
+        <div class="pt-1">Spanish</div>
+    </a>
+    <a href="/category/Italian" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="images/Italian_food.jpg" alt="Italian Food" loading="lazy">
+        </div>
+        <div class="pt-1">Italian</div>
+    </a>
+    <a href="/categories" class="col text-center category__link">
+        <div class="category__img shadow">
+            <img src="images/More.png" alt="View All" loading="lazy">
+        </div>
+        <div class="pt-1">View All</div>
+    </a>
+
+</div>
+<!-- Categories End -->
+
+
+<!-- Latest Start -->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Recipes</h2>
+        <a href="/explore-latest" class="ms-auto">View More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+
+
+
+
+        <!-- Latest recipe cards go here -->
+
+        <% posts.forEach((post, index) => { %>
+            <a href="/blog/<%= index %>" class="col text-center category__link">
+                <div class="category__img category__img--large shadow">
+                    <img src="<%= post.imageUrl %>" alt="Blog Image" loading="lazy">
+                </div>
+                <div class="pt-1"><%= post.name %></div>
+            </a>
+        <% }); %>
+
+
+<!-- ............................................................................ -->
+
+        <a href="recipe/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="images/Recipes_img1.jpg" alt="Strawberry Cake" loading="lazy">
+            </div>
+            <div class="pt-1">Strawberry Cake</div>
+        </a>
+        
+        <a href="recipe/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="images/Recipes_img2.jpg" alt="Green Salad" loading="lazy">
+            </div>
+            <div class="pt-1">Green Salad</div>
+        </a>
+
+        <a href="recipe/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="images/Recipes_img3.jpg" alt="Chicken Stew" loading="lazy">
+            </div>
+            <div class="pt-1">Chicken Stew</div>
+        </a>
+
+        <a href="recipe/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="images/Recipes_img4.jpg" alt="Masala Dosa" loading="lazy">
+            </div>
+            <div class="pt-1">Masala Dosa</div>
+        </a>
+
+        <a href="recipe/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="images/Recipes_img5.jpg" alt="Pani Puri" loading="lazy">
+            </div>
+            <div class="pt-1">Pani Puri</div>
+        </a>
+
+        <a href="recipe/#" class="col text-center category__link">
+            <div class="category__img category__img--large shadow">
+                <img src="images/Recipes_img6.jpg" alt="Margherita" loading="lazy">
+            </div>
+            <div class="pt-1">Margherita</div>
+        </a>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- Latest End -->
+
+<!-- Submit Start -->
+
+<section class="px-4 py-5 my-5 text-center">
+    <img src="images\publish-recipe.png" class="d-block mx-auto mb-4 img-fluid" alt="Publish your recipe for FREE today" width="566" height="208" loading="lazy">
+    <h1 class="display-5 fw-bold">Publish your recipe for FREE today</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Publish your Recipe in front of thousands of people for free.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/submit" class="btn btn-primary btn-dark btn-lg">Submit Recipe</a>
+        </div>
+    </div>
+</section>
+
+<!-- Submit End -->
+
+<%- include("partials/footer.ejs") %>
